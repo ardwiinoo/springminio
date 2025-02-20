@@ -107,3 +107,5 @@ response: `200 OK`
 ```
 
 If you have **scenario to store url of the file in database**, you can save it with pattern `{miniO-api-host}/{bucket-name}/{filename}` but the bucket must be set to public
+
+![MiniO image](/minio_dashboard.png)
