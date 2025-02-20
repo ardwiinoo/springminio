@@ -64,9 +64,18 @@ accepts: `multipart/form-data`
   "file": "file"
 }
 ```
-response: `200 OK`
+response: `201 CREATED`
 
-TBA
+```json
+{
+    "data": {
+        "fileName": "7u94qd.jpg",
+        "fileType": "image/jpeg",
+        "size": 48003
+    },
+    "message": "File uploaded with success!"
+}
+```
 
 ### 2. Download file
 
@@ -74,13 +83,11 @@ method: `GET`
 
 url: `{baseUrl}/api/v1/files/download?filename={filename}`
 
-accepts: `application/json`
-
 request params: `filename`
 
 response: `200 OK`
 
-TBA
+content-type: `application/octet-stream`
 
 ### 3. Delete file
 
@@ -88,12 +95,15 @@ method: `DELETE`
 
 url: `{baseUrl}/api/v1/files?filename={filename}`
 
-accepts: `application/json`
-
 request params: `filename`
 
 response: `200 OK`
 
-TBA
+```json
+{
+    "data": null,
+    "message": "7u94qd.jpg has deleted with success!"
+}
+```
 
 If you have **scenario to store url of the file in database**, you can save it with pattern `{miniO-api-host}/{bucket-name}/{filename}` but the bucket must be set to public
